@@ -9,11 +9,13 @@ import rarlog.me.entity.Playlist;
 @Data
 public class PlaylistDto {
 
+    private long id;
     private String name;
     private String coverPath;
     private List<SongDto> songs;
 
     public PlaylistDto(Playlist playlist) {
+        this.id = playlist.getId();
         this.name = playlist.getName();
         this.coverPath = playlist.getCoverPath();
         this.songs = playlist.getPlaylistSongs().stream().map(p -> new SongDto(p.getSong()))
