@@ -8,6 +8,7 @@ import rarlog.me.entity.Song;
 @NoArgsConstructor
 public class SongDto {
 
+    private long id;
     private String name;
     private String genre;
     private float length;
@@ -15,6 +16,7 @@ public class SongDto {
     private String albumName;
 
     public SongDto(Song song) {
+        this.id = song.getId();
         this.name = song.getName();
         this.genre = song.getGenre();
         this.length = song.getLength();
