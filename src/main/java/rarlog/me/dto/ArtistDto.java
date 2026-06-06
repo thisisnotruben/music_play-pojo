@@ -1,12 +1,21 @@
 package rarlog.me.dto;
 
-import rarlog.me.entity.Artist;
+import java.util.List;
 
-public class ArtistDto {
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class ArtistDto extends SearchResultDto {
 
-    public ArtistDto(Artist artist) {
-        
-    }
-    
+    private String name;
+    private List<AlbumDto> albums;
+
+    public ArtistDto(String name, List<AlbumDto> albums) {
+        this.type = SearchDto.TYPE_ARTIST;
+        this.name = name;
+        this.albums = albums;
+    }    
+
 }
