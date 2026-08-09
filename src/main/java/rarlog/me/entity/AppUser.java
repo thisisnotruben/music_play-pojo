@@ -38,6 +38,9 @@ public class AppUser {
     @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
+    @Column(name = "refresh_token", nullable = false)
+    private String refreshToken;
+
     @OneToMany(mappedBy = "appUser")
     private List<Playlist> playlists;
 
@@ -47,6 +50,7 @@ public class AppUser {
         this.firstName = accountCreateDto.getFirstName();
         this.lastName = accountCreateDto.getLastName();
         this.email = accountCreateDto.getEmail();
+        this.refreshToken = "";
     }
 
 }
