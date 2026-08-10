@@ -1,14 +1,18 @@
 package rarlog.me.dto;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 public class LoginResponseDto {
     
-    private String token;
+    private String accessToken;
+    private LocalDateTime accessTokenExpiration;
+
+    private String refreshToken;
+    private LocalDateTime refreshTokenExpiration;
 
 }
