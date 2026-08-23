@@ -14,7 +14,6 @@ public class AppUserDto {
 
     public AppUserDto(AppUser appUser) {
         this.username = appUser.getUsername();
-        this.password = appUser.getPassword();
         this.email = appUser.getEmail();
         this.firstName = appUser.getFirstName();
         this.lastName = appUser.getLastName();
