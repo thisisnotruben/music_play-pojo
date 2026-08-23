@@ -23,34 +23,26 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String username;
 
-    @Column(nullable = false, length = 100)
-    private String password;
-
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String email;
 
-    @Column(name = "first_name", nullable = false, length = 100)
+    @Column(name = "first_name", length = 100)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false, length = 100)
+    @Column(name = "last_name", length = 100)
     private String lastName;
-
-    @Column(name = "refresh_token", nullable = false)
-    private String refreshToken;
 
     @OneToMany(mappedBy = "appUser")
     private List<Playlist> playlists;
 
     public AppUser(AccountCreateDto accountCreateDto) {
         this.username = accountCreateDto.getUsername();
-        this.password = accountCreateDto.getPassword();
         this.firstName = accountCreateDto.getFirstName();
         this.lastName = accountCreateDto.getLastName();
         this.email = accountCreateDto.getEmail();
-        this.refreshToken = "";
     }
 
 }
