@@ -11,7 +11,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import rarlog.me.dto.AccountCreateDto;
 
 @Data
 @Entity
@@ -37,12 +36,5 @@ public class AppUser {
 
     @OneToMany(mappedBy = "appUser")
     private List<Playlist> playlists;
-
-    public AppUser(AccountCreateDto accountCreateDto) {
-        this.username = accountCreateDto.getUsername();
-        this.firstName = accountCreateDto.getFirstName();
-        this.lastName = accountCreateDto.getLastName();
-        this.email = accountCreateDto.getEmail();
-    }
 
 }
