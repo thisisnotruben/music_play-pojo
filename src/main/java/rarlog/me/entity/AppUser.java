@@ -27,7 +27,7 @@ public class AppUser {
     private long id;
 
     @Column(nullable = false)
-    private String username;
+    private String userId;
 
     @Column(nullable = false)
     private String email;

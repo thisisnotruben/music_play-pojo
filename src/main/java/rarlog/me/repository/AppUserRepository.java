@@ -10,8 +10,8 @@ import rarlog.me.entity.AppUser;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
-    Optional<AppUser> findByUsername(String username);
+    Optional<AppUser> findByUserId(String username);
 
-    boolean existsByUsername(String username);
+    boolean existsByUserId(String username);
 
 }
