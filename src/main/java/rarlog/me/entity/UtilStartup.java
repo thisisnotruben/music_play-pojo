@@ -1,10 +1,14 @@
 package rarlog.me.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "util_startup")
 public class UtilStartup {
 
@@ -20,5 +24,8 @@ public class UtilStartup {
 
     @Column(name = "db_init")
     private boolean dbInit;
+
+    @Column(name = "auth_init")
+    private boolean authInit;
 
 }
